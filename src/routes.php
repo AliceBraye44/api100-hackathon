@@ -10,10 +10,5 @@ return [
     '' => ['HomeController', 'index',],
     'play_card' => ['CardController', 'play', ['id']],
     'home/game' => ['HomeController', 'game'],
-<<<<<<< HEAD
     'home/results' => ['HomeController', 'results'],
 ];
-=======
-    'home/results' => ['HomeController', 'results']
-];
->>>>>>> 853a81d5a64c1dd6944ed2ea359d091872a58072
