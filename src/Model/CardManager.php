@@ -11,7 +11,7 @@ class CardManager extends AbstractManager
 
     public function selectSix()
     {
-        $query="SELECT * FROM " . self::TABLE . " ORDER BY RAND() LIMIT 6";
+        $query="SELECT * FROM " . self::TABLE . " ORDER BY RAND() LIMIT  6";
 
         return $this->pdo->query($query)->fetchAll();
     }
