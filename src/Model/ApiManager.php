@@ -4,16 +4,11 @@ namespace App\Model;
 
 use Symfony\Component\HttpClient\HttpClient;
 
-class Api
+class ApiManager
 {
     private $client;
 
-    public function __construct()
-    {
-        $this->client = HttpClient::create();
-    }
-
-    public function getDataFrom(string $url)
+    public function getDataFromQuotes(string $url)
     {
         $response = $this->client->request('GET', $url);
 
