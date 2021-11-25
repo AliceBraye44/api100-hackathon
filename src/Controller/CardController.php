@@ -12,16 +12,13 @@ class CardController extends AbstractController
     // //cartes côté face : tableau qui contient des INT id
     // public array $facedCards = [];
    public const MAXCARDS = 2;
+   public $winresults;
 
 
     public function play(int $id)
     {
         var_dump("début de play");
-        // session_start();
-        // $_SESSION['cards_id']=[];
-        // var_dump($_SESSION);
-        // die();
-       $this->idSaved();
+        $this->idSaved();
 
        var_dump($_SESSION["cards_id"]);
 
@@ -38,24 +35,28 @@ class CardController extends AbstractController
                 // permet d'incrémenter le tableau de score
                 $_SESSION['roundsWon']++;
 
-
             } else {
                 $message = "you loose this round, looser !";
 
             }
+
             var_dump($_SESSION);
             $this->endOfRound();
             var_dump($_SESSION);
             var_dump($message);
+            var_dump($this->winresults);
 
             //return json_encode($message);
         }
+    }
 /*
 
 
         //ajoute les cartes à la liste des cartes retournées
         array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
-       // fin de round
+
+
+        // fin de round
         $this->endOfRound();
        } else {
             // fin de round
@@ -64,16 +65,27 @@ class CardController extends AbstractController
     // }
 
 
+    public function win()
+    {
+        if ($_SESSION['roundsWon'] >= 6 ) {
+            $this->winresults = "free britney ! ";
+            $win = true;
+            $_SESSION['roundsWon'] = 0 ;
+            // header("Location: home/results");
 
-}
+        } else {
+            $this->winresults = " y a encore du taf ";
+        }
+    }
 
     public function endOfRound()
     {
         // réinitiliser le tableau de session des id des cartes
         $_SESSION['cards_id'] = [];
+        // vérifier si on a gagné
+        $this->win();
         //TO DO mise à jour de la face des cartes en front
         //TO DO régnénrer citation aléatoire
-        // TO DO vérifier si on a gagné
     }
 
     public function idSaved()
@@ -84,7 +96,7 @@ class CardController extends AbstractController
 
         session_start();
         $_SESSION['roundsWon'];
-       // $_SESSION['cards_id'] = [];
+
         if (isset($_GET['id'])) {
 
             if (!isset($_SESSION['cards_id'])) {
