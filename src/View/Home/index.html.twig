@@ -1,6 +1,14 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Hello Wilder !</h1>
-    <p> Po po po </p>
+
+    <h2>Bienvenue ! Notre site vous propose de jouer à un jeu de mémoire qui a pour thème Britney Spears (Free Britney!)</h2>
+
+    <label for="nom">Ton ptit nom:</label><br>
+    <input type="text" id="nom" name="nom" placeholder="Michel" required>
+    <div class="btn"><button id="btn-submit" type="submit" value="Lancer le jeu !"> Lancer le jeu !
+    {# {{button}} #}
+    </button></div>
+
+
 {% endblock %}
