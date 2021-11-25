@@ -21,3 +21,4 @@ return [
     'home/index' => ['HomeController', 'index'],
     'home/game' => ['HomeController', 'game'],
     'home/results' => ['HomeController', 'results'],
+];
