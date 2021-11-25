@@ -3,11 +3,13 @@
 {% block content %}
 
     <h2>Bienvenue ! Notre site vous propose de jouer à un jeu de mémoire qui a pour thème les couprs de cheveux de Britney Spears (Free Britney!)</h2>
-
-    <label for="nom">Ton ptit nom:</label><br>
-    <input type="text" id="nom" name="nom" placeholder="Michel" required>
-    <img class="" src="\assets\images\911819-1999-britney-spears-entame-sa-580x0-2.jpg" >
-    <div class="btn"><a href="home/game"><button id="btn-submit" type="submit" value="Lancer le jeu !"> Lancer le jeu !
+   
+    <form id="formNom" action="/home/name" method="post" name="loginname">
+        <label for="loginname">Ton ptit nom:</label><br>
+        <input type="text" id="loginname" name="loginname" placeholder="Michel" required>
+        <img class="" src="\assets\images\911819-1999-britney-spears-entame-sa-580x0-2.jpg" >
+        <div class="btn"><a href="home/game"><button id="btn-submit" type="submit" value="Lancer le jeu !"> Lancer le jeu !
+    </form>
     {# {{button}} #}
     </button></a></div>
 

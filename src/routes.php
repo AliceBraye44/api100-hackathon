@@ -11,4 +11,5 @@ return [
     'play_card' => ['CardController', 'play', ['id']],
     'home/game' => ['HomeController', 'game'],
     'home/results' => ['HomeController', 'results'],
+    'home/name' => ['SessionController', 'start']
 ];

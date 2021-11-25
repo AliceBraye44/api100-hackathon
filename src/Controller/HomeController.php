@@ -10,6 +10,7 @@
 namespace App\Controller;
 
 use App\Model\ApiQuotesManager;
+use App\Controller\SessionController;
 use App\Controller\AbstractController;
 
 
@@ -44,6 +45,9 @@ class HomeController extends AbstractController
 
     public function results()
     {
-        return $this->twig->render('Home/results.html.twig');
+        session_start();
+        
+         return $this->twig->render('Home/results.html.twig', ['name' => $_SESSION ['loginname']]);
     }
+    
 }
