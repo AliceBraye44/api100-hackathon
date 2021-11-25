@@ -1,15 +1,18 @@
 <?php
 
 
-class SessionController{
+class SessionController
+{
 
-    public function start(){
+    public function start()
+    {
         session_start();
+        $_SESSION['roundsWon'] = 0;
 
-        if(!isset($_SESSION['loginname'])){
-            $username="Michel";
+        if (!isset($_SESSION['loginname'])) {
+            $username = "Michel";
         } else {
-            $username=$_SESSION['loginname'];
+            $username = $_SESSION['loginname'];
         }
     }
 }
