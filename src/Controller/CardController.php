@@ -8,7 +8,6 @@ use Symfony\Component\Console\Helper\Dumper;
 class CardController extends AbstractController
 {
 
-
     // //cartes côté face : tableau qui contient des INT id
    public array $facedCards = [];
    public const MAXCARDS = 2;
@@ -88,7 +87,6 @@ class CardController extends AbstractController
         // de l'ajouter dans le tableau des id joués
 
         session_start();
-        $_SESSION['roundsWon'];
 
         if (isset($_GET['id'])) {
 
