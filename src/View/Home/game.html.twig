@@ -12,18 +12,10 @@
         </div>
 
 		<div class="cartes">
-            <div class="cartes_row1" id="carte_0"></div>
-            <div class="cartes_row1" id="carte_1"></div>
-            <div class="cartes_row1" id="carte_2"></div>
-            <div class="cartes_row1" id="carte_3"></div>
-            <div class="cartes_row1" id="carte_5"></div>
-            <div class="cartes_row1" id="carte_6"></div>
-            <div class="cartes_row1" id="carte_7"></div>
-            <div class="cartes_row1" id="carte_8"></div>
-            <div class="cartes_row1" id="carte_9"></div>
-            <div class="cartes_row1" id="carte_10"></div>
-            <div class="cartes_row1" id="carte_11"></div>
-            <div class="cartes_row1" id="carte_12"></div>
+            {% for picture in pictures %}
+                <img class="cartes_row1" src="{{picture.img}}">
+            {% endfor %}
         </div>
+
 </body>
 {% endblock %}

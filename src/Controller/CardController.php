@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use App\Model\CardManager;
+use App\Controller\AbstractController;
+
 class CardController extends AbstractController
 {
-
-    
 
     // // nombre de tours gagnés
     // public int $roundsWon = 0;
@@ -14,9 +15,9 @@ class CardController extends AbstractController
     // public array $facedCards = [];
     // public const MAXCARDS = 2;
 
-    public function play(int $id)
-    {
-        return json_encode($id);
+    // public function play(int $id)
+    // {
+    //     return json_encode($id);
 
         // $this->idSaved();
 
@@ -37,30 +38,39 @@ class CardController extends AbstractController
         //         $this->endOfRound();
         //     }
         // } */
-    }
+    // }
 
-    public function endOfRound()
-    {
-        // réinitiliser le tableau de session des id des cartes
-        $_SESSION['cards_id'] = [];
+    // public function endOfRound()
+    // {
+    //     // réinitiliser le tableau de session des id des cartes
+    //     $_SESSION['cards_id'] = [];
         //TO DO mise à jour de la face des cartes en front
         //TO DO régnénrer citation aléatoire
         // TO DO vérifier si on a gagné
 
-    }
+    // }
 
-    public function idSaved()
-    {
-        // permet de récuper l'id dans le get et
-        // de l'ajouter dans le tableau des id joués
-        if (isset($_GET['play_card'])) {
-            if (!isset($_SESSION['cards_id'])) {
+    // public function idSaved()
+    // {
+    //     // permet de récuper l'id dans le get et
+    //     // de l'ajouter dans le tableau des id joués
+    //     if (isset($_GET['play_card'])) {
+    //         if (!isset($_SESSION['cards_id'])) {
 
-                $_SESSION['cards_id'] = [];
-            }
-            $_SESSION['cards_id'][] = $_GET['play_card'];
-        }
-    }
+    //             $_SESSION['cards_id'] = [];
+    //         }
+    //         $_SESSION['cards_id'][] = $_GET['play_card'];
+    //     }
+    // }
 
+    // public function show()
+    // {
+    //     $cardManager = new CardManager();
+    //     $pictures = $cardManager->selectSix();
+    //     var_dump($pictures);
+    //     die();
+
+    //     return $this->twig->render('Home/game.html.twig', ['pictures' => $pictures]);
+    // }
 
 }
