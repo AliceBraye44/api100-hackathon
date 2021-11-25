@@ -7,22 +7,17 @@ use Symfony\Component\Console\Helper\Dumper;
 
 class CardController extends AbstractController
 {
-    // // nombre de tours gagnés
-    // public int $roundsWon = 0;
+
 
     // //cartes côté face : tableau qui contient des INT id
-    // public array $facedCards = [];
+   public array $facedCards = [];
    public const MAXCARDS = 2;
-
+   public $winresults;
 
     public function play(int $id)
     {
         var_dump("début de play");
-        // session_start();
-        // $_SESSION['cards_id']=[];
-        // var_dump($_SESSION);
-        // die();
-       $this->idSaved();
+        $this->idSaved();
 
        var_dump($_SESSION["cards_id"]);
 
@@ -35,42 +30,55 @@ class CardController extends AbstractController
 
             // permet de verifier les resultats
             if (($_SESSION['cards_id'][0]) == $_SESSION['cards_id'][1]) {
-                $message = "you win!" ;
-
+                $message = "you win this round!" ;
+                // permet d'incrémenter le tableau de score en cas de victoire
+                $_SESSION['roundsWon']++;
+                // permet de garder les cartes retournées en cas de victoire
+                $this->AddFacedCards();
 
             } else {
-                $message = "you loose, looser !";
-
+                $message = "you loose this round, looser !";
             }
+
             var_dump($_SESSION);
             $this->endOfRound();
             var_dump($_SESSION);
             var_dump($message);
+            var_dump($this->winresults);
+            var_dump($this->facedCards);
 
             //return json_encode($message);
         }
-/*
-         // permet d'incrémenter le tableau de score
-            $this->roundsWon = $this->roundsWon++;
-
-        //ajoute les cartes à la liste des cartes retournées
-        array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
-       // fin de round
-        $this->endOfRound();
-       } else {
-            // fin de round
-            $this->endOfRound();
-        } */
-    // }
-
     }
+
+
+
+    //ajoute les cartes à la liste des cartes retournées
+    public function AddFacedCards() {
+        array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
+    }
+
+    public function win()
+    {
+        if ($_SESSION['roundsWon'] >= 6 ) {
+            $this->winresults = "free britney ! ";
+            $win = true;
+            $_SESSION['roundsWon'] = 0 ;
+            // header("Location: home/results");
+
+        } else {
+            $this->winresults = " y a encore du taf ";
+        }
+    }
+
+
     public function endOfRound()
     {
         // réinitiliser le tableau de session des id des cartes
         $_SESSION['cards_id'] = [];
-        //TO DO mise à jour de la face des cartes en front
+        // vérifier si on a gagné
+        $this->win();
         //TO DO régnénrer citation aléatoire
-        //TO DO vérifier si on a gagné
     }
 
     public function idSaved()
@@ -80,7 +88,8 @@ class CardController extends AbstractController
         // de l'ajouter dans le tableau des id joués
 
         session_start();
-       // $_SESSION['cards_id'] = [];
+        $_SESSION['roundsWon'];
+
         if (isset($_GET['id'])) {
 
             if (!isset($_SESSION['cards_id'])) {
@@ -88,14 +97,10 @@ class CardController extends AbstractController
                 $_SESSION['cards_id'] = [];
             }
             $_SESSION['cards_id'][] = $_GET['id'];
+
         }
 
 
     }
 
-    //             $_SESSION['cards_id'] = [];
-    //         }
-    //         $_SESSION['cards_id'][] = $_GET['play_card'];
-    //     }
-    // }
 }
