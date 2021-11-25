@@ -10,10 +10,9 @@ class CardController extends AbstractController
 
 
     // //cartes côté face : tableau qui contient des INT id
-    // public array $facedCards = [];
+   public array $facedCards = [];
    public const MAXCARDS = 2;
    public $winresults;
-
 
     public function play(int $id)
     {
@@ -32,12 +31,13 @@ class CardController extends AbstractController
             // permet de verifier les resultats
             if (($_SESSION['cards_id'][0]) == $_SESSION['cards_id'][1]) {
                 $message = "you win this round!" ;
-                // permet d'incrémenter le tableau de score
+                // permet d'incrémenter le tableau de score en cas de victoire
                 $_SESSION['roundsWon']++;
+                // permet de garder les cartes retournées en cas de victoire
+                $this->AddFacedCards();
 
             } else {
                 $message = "you loose this round, looser !";
-
             }
 
             var_dump($_SESSION);
@@ -45,25 +45,17 @@ class CardController extends AbstractController
             var_dump($_SESSION);
             var_dump($message);
             var_dump($this->winresults);
+            var_dump($this->facedCards);
 
             //return json_encode($message);
         }
     }
-/*
 
 
-        //ajoute les cartes à la liste des cartes retournées
+    //ajoute les cartes à la liste des cartes retournées
+    public function AddFacedCards() {
         array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
-
-
-        // fin de round
-        $this->endOfRound();
-       } else {
-            // fin de round
-            $this->endOfRound();
-        } */
-    // }
-
+    }
 
     public function win()
     {
@@ -84,7 +76,6 @@ class CardController extends AbstractController
         $_SESSION['cards_id'] = [];
         // vérifier si on a gagné
         $this->win();
-        //TO DO mise à jour de la face des cartes en front
         //TO DO régnénrer citation aléatoire
     }
 
@@ -109,6 +100,5 @@ class CardController extends AbstractController
 
 
     }
-
 
 }
