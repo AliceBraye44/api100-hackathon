@@ -1,4 +1,3 @@
-
 // const cartes = document.querySelectorAll('.cartes_row1')
 // cartes.forEach((carte, index) => {
 //     carte.addEventListener('click', function (){
