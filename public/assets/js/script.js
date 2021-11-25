@@ -1,13 +1,16 @@
+const cartes = document.querySelectorAll('.memory-card');
+const id = document.getDocumentById('#{{pitcture.id}}')
 
-// const cartes = document.querySelectorAll('.cartes_row1')
-// cartes.forEach((carte, index) => {
-//     carte.addEventListener('click', function (){
-//         console.log("Mon fetch API")
-//         fetch('/play_card?id=' + index)
-//         .then(response => response.json())
-//         .then(data => console.log(data))
-//     })
-// })
+cartes.forEach((carte, id) => {
+    carte.addEventListener('click', function() {
+        fetch('/play_card?id=' + id)
+            .then(response => response.json())
+            .then(data => console.log(data))
+    })
+})
+
+
+///
 
 const cards = document.querySelectorAll('.memory-card');
 

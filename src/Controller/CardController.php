@@ -40,13 +40,16 @@ class CardController extends AbstractController
             }
 
             var_dump($_SESSION);
+
             $this->endOfRound();
+
+
             var_dump($_SESSION);
             var_dump($message);
             var_dump($this->winresults);
             var_dump($this->facedCards);
 
-            //return json_encode($message);
+            return json_encode($message);
         }
     }
 
