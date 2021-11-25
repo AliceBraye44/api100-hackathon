@@ -4,9 +4,13 @@ body {
     font-size: 40px;
 }
 
+
 #titre {
     display:flex;
     justify-content:center;
+    font-family: 'Corpulent Caps Shadow BRK', sans-serif;
+    font-family: 'Corpulent Caps BRK', sans-serif;
+    font-size: 40px;
 }
 
 .timer {

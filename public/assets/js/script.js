@@ -9,6 +9,10 @@
 //     })
 // })
 
+// PARTIE TIMER
+
+// PARTIE POUR TOUT LE MEMORY GAME AVEC LE RETOURNEMENT DES CARTES
+
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
