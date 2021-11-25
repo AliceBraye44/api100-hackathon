@@ -7,8 +7,7 @@ use Symfony\Component\Console\Helper\Dumper;
 
 class CardController extends AbstractController
 {
-    // // nombre de tours gagnés
-    // public int $roundsWon = 0;
+
 
     // //cartes côté face : tableau qui contient des INT id
     // public array $facedCards = [];
@@ -35,11 +34,13 @@ class CardController extends AbstractController
 
             // permet de verifier les resultats
             if (($_SESSION['cards_id'][0]) == $_SESSION['cards_id'][1]) {
-                $message = "you win!" ;
+                $message = "you win this round!" ;
+                // permet d'incrémenter le tableau de score
+                $_SESSION['roundsWon']++;
 
 
             } else {
-                $message = "you loose, looser !";
+                $message = "you loose this round, looser !";
 
             }
             var_dump($_SESSION);
@@ -50,8 +51,7 @@ class CardController extends AbstractController
             //return json_encode($message);
         }
 /*
-         // permet d'incrémenter le tableau de score
-            $this->roundsWon = $this->roundsWon++;
+
 
         //ajoute les cartes à la liste des cartes retournées
         array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
@@ -83,6 +83,7 @@ class CardController extends AbstractController
         // de l'ajouter dans le tableau des id joués
 
         session_start();
+        $_SESSION['roundsWon'];
        // $_SESSION['cards_id'] = [];
         if (isset($_GET['id'])) {
 
@@ -91,6 +92,7 @@ class CardController extends AbstractController
                 $_SESSION['cards_id'] = [];
             }
             $_SESSION['cards_id'][] = $_GET['id'];
+
         }
 
 
