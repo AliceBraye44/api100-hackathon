@@ -58,4 +58,6 @@ class CardController extends AbstractController
             $_SESSION['cards_id'][] = $_GET['play_card'];
         }
     }
+
+
 }
