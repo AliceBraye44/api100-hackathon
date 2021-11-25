@@ -63,17 +63,14 @@ class CardController extends AbstractController
         } */
     // }
 
-
-
-}
-
+    }
     public function endOfRound()
     {
         // réinitiliser le tableau de session des id des cartes
         $_SESSION['cards_id'] = [];
         //TO DO mise à jour de la face des cartes en front
         //TO DO régnénrer citation aléatoire
-        // TO DO vérifier si on a gagné
+        //TO DO vérifier si on a gagné
     }
 
     public function idSaved()
@@ -96,5 +93,9 @@ class CardController extends AbstractController
 
     }
 
-
+    //             $_SESSION['cards_id'] = [];
+    //         }
+    //         $_SESSION['cards_id'][] = $_GET['play_card'];
+    //     }
+    // }
 }
