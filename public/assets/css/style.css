@@ -4,6 +4,11 @@ body {
     font-size: 40px;
 }
 
+#titre {
+    display:flex;
+    justify-content:center;
+}
+
 .timer {
     display: flex;
     justify-content: center;
