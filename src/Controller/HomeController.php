@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Model\CardManager;
 use App\Model\ApiQuotesManager;
 use App\Controller\SessionController;
 use App\Controller\AbstractController;
@@ -40,7 +41,12 @@ class HomeController extends AbstractController
         $dataQuotes = new ApiQuotesManager();
         $quote = $dataQuotes->getDataFromQuotes("https://api.britney.rest/?format=text");
 
-        return $this->twig->render('Home/game.html.twig', ['quote' => $quote]);
+        $cardManager = new CardManager();
+        $pictures = $cardManager->selectSix();
+        $tableau = $pictures;
+        $tableau2 = array_merge($tableau, $pictures);
+
+        return $this->twig->render('Home/game.html.twig', ['quote' => $quote, 'pictures' => $tableau2]);
     }
 
     public function results()

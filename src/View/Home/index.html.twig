@@ -1,10 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
+    </br>
     <h2>Bienvenue ! Notre site vous propose de jouer à un jeu de mémoire qui a pour thème les couprs de cheveux de Britney Spears (Free Britney!)</h2>
    
-    <form id="formNom" action="/home/name" method="post" name="loginname">
+    <form id="formNom" action="/name" method="post" name="loginname">
         <label for="loginname">Ton ptit nom:</label><br>
         <input type="text" id="loginname" name="loginname" placeholder="Michel" required>
         <img class="" src="\assets\images\911819-1999-britney-spears-entame-sa-580x0-2.jpg" >
@@ -12,6 +12,5 @@
     </form>
     {# {{button}} #}
     </button></a></div>
-
 
 {% endblock %}

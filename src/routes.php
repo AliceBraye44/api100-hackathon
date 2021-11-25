@@ -9,7 +9,7 @@
 return [
     '' => ['HomeController', 'index',],
     'play_card' => ['CardController', 'play', ['id']],
-    'home/game' => ['HomeController', 'game'],
-    'home/results' => ['HomeController', 'results'],
-    'home/name' => ['SessionController', 'start']
+    'game' => ['HomeController', 'game'],
+    'results' => ['HomeController', 'results'],
+    'name' => ['SessionController', 'start']
 ];
