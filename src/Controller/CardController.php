@@ -2,42 +2,70 @@
 
 namespace App\Controller;
 
+use App\Controller\AbstractController;
+use Symfony\Component\Console\Helper\Dumper;
+
 class CardController extends AbstractController
 {
-
-    
-
     // // nombre de tours gagnés
     // public int $roundsWon = 0;
 
     // //cartes côté face : tableau qui contient des INT id
     // public array $facedCards = [];
-    // public const MAXCARDS = 2;
+   public const MAXCARDS = 2;
+
 
     public function play(int $id)
     {
-        return json_encode($id);
+        var_dump("début de play");
+        // session_start();
+        // $_SESSION['cards_id']=[];
+        // var_dump($_SESSION);
+        // die();
+       $this->idSaved();
 
-        // $this->idSaved();
+       var_dump($_SESSION["cards_id"]);
 
-        // // permet de compter le nombre de cartes jouées
-        // if (count($_SESSION['cards_id']) == self::MAXCARDS) {
+        // permet de compter le nombre de cartes jouées
+        if (count($_SESSION['cards_id']) >= self::MAXCARDS) {
+            var_dump("nombre de cartes max atteint");
 
-        //     // permet de verifier les resultats
-        //     if (($_SESSION['cards_id'][0]) == ($_SESSION['cards_id'][1])) {
+            //$message = "2cartes max";
+            //return $message;
 
-        //         // permet d'incrémenter le tableau de score
-        //         $this->roundsWon = $this->roundsWon++;
-        //         //ajoute les cartes à la liste des cartes retournées
-        //         array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
-        //         // fin de round
-        //         $this->endOfRound();
-        //     } else {
-        //         // fin de round
-        //         $this->endOfRound();
-        //     }
-        // } */
-    }
+            // permet de verifier les resultats
+            if (($_SESSION['cards_id'][0]) == $_SESSION['cards_id'][1]) {
+                $message = "you win!" ;
+
+
+            } else {
+                $message = "you loose, looser !";
+
+            }
+            var_dump($_SESSION);
+            $this->endOfRound();
+            var_dump($_SESSION);
+            var_dump($message);
+
+            //return json_encode($message);
+        }
+/*
+         // permet d'incrémenter le tableau de score
+            $this->roundsWon = $this->roundsWon++;
+
+        //ajoute les cartes à la liste des cartes retournées
+        array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
+       // fin de round
+        $this->endOfRound();
+       } else {
+            // fin de round
+            $this->endOfRound();
+        } */
+    // }
+
+
+
+}
 
     public function endOfRound()
     {
@@ -46,20 +74,26 @@ class CardController extends AbstractController
         //TO DO mise à jour de la face des cartes en front
         //TO DO régnénrer citation aléatoire
         // TO DO vérifier si on a gagné
-
     }
 
     public function idSaved()
     {
+        var_dump("dans idsaveed");
         // permet de récuper l'id dans le get et
         // de l'ajouter dans le tableau des id joués
-        if (isset($_GET['play_card'])) {
+
+        session_start();
+       // $_SESSION['cards_id'] = [];
+        if (isset($_GET['id'])) {
+
             if (!isset($_SESSION['cards_id'])) {
 
                 $_SESSION['cards_id'] = [];
             }
-            $_SESSION['cards_id'][] = $_GET['play_card'];
+            $_SESSION['cards_id'][] = $_GET['id'];
         }
+
+
     }
 
 
