@@ -42,8 +42,10 @@ class HomeController extends AbstractController
 
         $cardManager = new CardManager();
         $pictures = $cardManager->selectSix();
+        $tableau = $pictures;
+        $tableau2 = array_merge($tableau, $pictures);
 
-        return $this->twig->render('Home/game.html.twig', ['quote' => $quote, 'pictures' => $pictures]);
+        return $this->twig->render('Home/game.html.twig', ['quote' => $quote, 'pictures' => $tableau2]);
     }
 
     public function results()
