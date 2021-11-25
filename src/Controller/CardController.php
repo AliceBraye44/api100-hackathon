@@ -53,7 +53,8 @@ class CardController extends AbstractController
 
 
     //ajoute les cartes à la liste des cartes retournées
-    public function AddFacedCards() {
+    public function AddFacedCards()
+    {
         array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
     }
 
