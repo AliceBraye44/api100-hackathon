@@ -63,14 +63,4 @@ class CardController extends AbstractController
     //     }
     // }
 
-    // public function show()
-    // {
-    //     $cardManager = new CardManager();
-    //     $pictures = $cardManager->selectSix();
-    //     var_dump($pictures);
-    //     die();
-
-    //     return $this->twig->render('Home/game.html.twig', ['pictures' => $pictures]);
-    // }
-
 }
