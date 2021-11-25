@@ -20,7 +20,8 @@
 </header>
 
     {% block content %}{% endblock %}
-    {% block javascript %}{% endblock %}
+    
+    {% block javascript %}<script src="/assets/script.js"></script>{% endblock %}
 
      {% block footer %} {% include '/Home/component/_footer.html.twig' %}{% endblock %}
 </body>
