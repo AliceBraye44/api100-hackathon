@@ -1,0 +1,49 @@
+body {
+    background-color: #EF5CBB;
+    color:whitesmoke;
+    font-size: 40px;
+}
+
+.timer {
+    display:flex;
+    justify-content: center;
+}
+
+.startbtn {
+    display:flex;
+    justify-content: center;
+}
+
+
+
+.cartes {
+    display:grid;
+    justify-content:center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 200px);
+    place-items : center;
+}
+
+.cartes_row1 {
+    background-color: tomato;
+    width: 200px;
+    height:150px;
+    object-fit:cover;
+}
+
+h1 {
+    display:flex;
+    justify-content: center;
+}
+
+
+h2 {
+    display:flex;
+    justify-content: center;
+}
+
+
+button {
+    display:flex;
+    justify-content: center;
+}
