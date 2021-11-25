@@ -13,8 +13,16 @@
 </head>
 
 <body>
+<header>
+    <nav>
+        <div id="titre">Memory Game</br>FreeBritney !</div>
+    </nav>
+</header>
+
     {% block content %}{% endblock %}
     {% block javascript %}{% endblock %}
+
+     {% block footer %} {% include '/Home/component/_footer.html.twig' %}{% endblock %}
 </body>
 </html>
 
