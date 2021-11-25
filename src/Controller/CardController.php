@@ -87,7 +87,6 @@ class CardController extends AbstractController
         // de l'ajouter dans le tableau des id joués
 
         session_start();
-        $_SESSION['roundsWon'];
 
         if (isset($_GET['id'])) {
 

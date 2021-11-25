@@ -7,6 +7,7 @@ class SessionController{
     public function start()
     {
         session_start();
+        $_SESSION['roundsWon'] = 0;
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
