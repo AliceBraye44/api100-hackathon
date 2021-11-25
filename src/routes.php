@@ -9,7 +9,11 @@
 return [
     '' => ['HomeController', 'index',],
 
+    'play_card' => ['CardController', 'play', ['id']],
+
+
     'items' => ['ItemController', 'index',],
+
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
