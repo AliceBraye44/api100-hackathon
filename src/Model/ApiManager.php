@@ -11,7 +11,6 @@ class Api
     public function __construct()
     {
         $this->client = HttpClient::create();
-
     }
 
     public function getDataFrom(string $url)
@@ -25,6 +24,5 @@ class Api
         $content = $response->getContent();
 
         return $content = $response->toArray();
-
     }
 }
