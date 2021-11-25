@@ -2,28 +2,22 @@
 
 {% block content %}
 <body>
+
+        <h2>C'est Britney qui l'a dit !</h2>
+        <div class="quote">
+        <p>"{{quote}}"</p>
+        </div>
+
 		<div class="timer">
         Le timer
         <button type="button">Start Timer</button>
         </div>
 
-        <div class="quote">
-        <p>"{{quote}}"</p>
+        <div class="memory-game">
+            {% for picture in pictures %}
+                    <div class="memory-card" data-framework="britney{{picture.id}}"><img class="front-face" src="{{picture.img}}"></div>
+            {% endfor %}
         </div>
 
-		<div class="cartes">
-            <div class="cartes_row1" id="carte_0"></div>
-            <div class="cartes_row1" id="carte_1"></div>
-            <div class="cartes_row1" id="carte_2"></div>
-            <div class="cartes_row1" id="carte_3"></div>
-            <div class="cartes_row1" id="carte_5"></div>
-            <div class="cartes_row1" id="carte_6"></div>
-            <div class="cartes_row1" id="carte_7"></div>
-            <div class="cartes_row1" id="carte_8"></div>
-            <div class="cartes_row1" id="carte_9"></div>
-            <div class="cartes_row1" id="carte_10"></div>
-            <div class="cartes_row1" id="carte_11"></div>
-            <div class="cartes_row1" id="carte_12"></div>
-        </div>
 </body>
 {% endblock %}

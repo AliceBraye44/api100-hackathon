@@ -14,17 +14,15 @@
 
 <body>
 <header>
-    <nav>
-        <div id="titre">Memory Game</br>FreeBritney !</div>
+    <nav><a href="/" id="titre"><div id="titre">Memory Game</br>FreeBritney !</div></a>
+
     </nav>
 </header>
 
     {% block content %}{% endblock %}
-    
-    {% block javascript %}<script src="/assets/script.js"></script>{% endblock %}
+
+    {% block javascript %}<script src="/assets/js/script.js"></script>{% endblock %}
 
      {% block footer %} {% include '/Home/component/_footer.html.twig' %}{% endblock %}
 </body>
 </html>
-
-
