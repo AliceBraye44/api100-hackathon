@@ -9,13 +9,6 @@
 return [
     '' => ['HomeController', 'index',],
     'play_card' => ['CardController', 'play', ['id']],
-
-    'items' => ['ItemController', 'index',],
-    'items/edit' => ['ItemController', 'edit', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],
-    'home/index' => ['HomeController', 'index'],
     'home/game' => ['HomeController', 'game'],
     'home/results' => ['HomeController', 'results']
 ];
