@@ -2,10 +2,25 @@
 
 {% block content %}
 
-<h1> YOU LOOSE {{ name }} ! </h1>
+
+
+<object>
+<param name="Autostart" value="true">
+<param name="src" value="toxic.mp3">
+<param name="autoplay" value="true">
+<param name="controller" value="true">
+<embed src="/assets/toxic.mp3" controller="true" autoplay="true" autostart="True" type="audio/mp3" />
+</object>
+
+<h2> You loose {{ name }} ! </h2>
 
 <h2>OOPS ! Daddy has won.</h2>
 
-<a href="/game"><button class="button" type="button">Replay</button></a>
+<div class="btn">
+    <a href="/">
+        <button id="btn-submit" type="submit" value="replay"> Let's try again !
+        </button>
+    </a>
+</div>
 
 {% endblock %}
