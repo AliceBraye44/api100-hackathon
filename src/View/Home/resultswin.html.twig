@@ -2,13 +2,6 @@
 
 {% block content %}
 
-<object>
-<param name="autostart" value="true">
-<param name="src" value="toxic.mp3">
-<param name="autoplay" value="true">
-<param name="controller" value="true">
-<embed src="/assets/toxic.mp3" controller="true" autoplay="true" autostart="True" type="audio/mp3" />
-</object>
 
 <h2> You win {{ name }} ! </h2>
 
@@ -20,5 +13,13 @@
         </button>
     </a>
 </div>
+
+<object>
+<param name="autostart" value="true">
+<param name="src" value="toxic.mp3">
+<param name="autoplay" value="true">
+<param name="controller" value="true">
+<embed src="/assets/toxic.mp3" controller="true" autoplay="true" autostart="True" type="audio/mp3" />
+</object>
 
 {% endblock %}
