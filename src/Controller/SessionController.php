@@ -13,12 +13,10 @@ class SessionController
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            //var_dump($_POST); die();
+            $_SESSION ['loginname'] = $_POST['loginname'];
 
-            $_SESSION['loginname'] = $_POST['loginname'];
-        } else {
-            $_SESSION['loginname'] = "Michel";
-        }
-        header('Location: /game');
+        }else {
+            $_SESSION ['loginname'] = "Michel";
+        } header('Location: /game');
     }
 }

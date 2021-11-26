@@ -61,5 +61,6 @@ class HomeController extends AbstractController
         session_start();
 
         return $this->twig->render('Home/resultsloose.html.twig', ['name' => $_SESSION['loginname']]);
+
     }
 }
