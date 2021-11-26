@@ -9,18 +9,22 @@
 
 <div class="btn">
     <a href="/">
-        <button id="btn-submit" type="submit" value="replay"> Let's try again !
+        <button id="btn-submit" id="end" type="submit" value="replay"> Let's try again !
         </button>
     </a>
 </div>
 
-<object>
+
+
+
+{% endblock %}
+
+     {% block audio %}
+     <object>
 <param name="autostart" value="true">
 <param name="src" value="toxic.mp3">
 <param name="autoplay" value="true">
 <param name="controller" value="true">
 <embed src="/assets/toxic.mp3" controller="true" autoplay="true" autostart="True" type="audio/mp3" />
 </object>
-
-
-{% endblock %}
+     {% endblock %}

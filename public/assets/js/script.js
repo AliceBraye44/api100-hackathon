@@ -1,4 +1,3 @@
-
 // PARTIE TIMER
 function countdown(elementName, minutes, seconds) {
     var element, endTime, hours, mins, msLeft, time;
@@ -11,7 +10,7 @@ function countdown(elementName, minutes, seconds) {
         msLeft = endTime - (+new Date);
         if (msLeft < 1000) {
             element.innerHTML = " Oops ! Time is up!";
-                window.location.href="/resultsloose"
+            window.location.href = "/resultsloose"
         } else {
             time = new Date(msLeft);
             hours = time.getUTCHours();
@@ -59,7 +58,7 @@ function flipCard() {
             console.log(data.win);
             data.win ? disableCards() : unflipCards();
             if (data.winTheGame) {
-                window.location.href="/results"
+                window.location.href = "/resultswin"
             }
         })
 
@@ -87,8 +86,7 @@ function unflipCards() {
     }, 1500);
 }
 
-    function resetBoard() {
-        [hasFlippedCard, lockBoard] = [false, false];
-        [firstCard, secondCard] = [null, null];
-    }
-
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
