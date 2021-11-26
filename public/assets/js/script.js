@@ -1,22 +1,10 @@
 const cartes = document.querySelectorAll('.memory-card');
-const id = document.getDocumentById('#{{pitcture.id}}')
-
-cartes.forEach((carte, id) => {
-    carte.addEventListener('click', function() {
-        fetch('/play_card?id=' + id)
-            .then(response => response.json())
-            .then(data => console.log(data))
-    })
-})
-
-
-///
-
-const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+
+cartes.forEach(card => card.addEventListener('click', flipCard));
 
 function flipCard() {
     if (lockBoard) return;
@@ -27,18 +15,22 @@ function flipCard() {
     if (!hasFlippedCard) {
         hasFlippedCard = true;
         firstCard = this;
+        fetch('/play_card?id=' + this.id)
 
         return;
     }
 
     secondCard = this;
-    checkForMatch();
-}
+    fetch('/play_card?id=' + this.id)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.win);
+            data.win ? disableCards() : unflipCards();
+            if (data.winTheGame) {
+                window.location.href="/results"
+            }
+        })
 
-function checkForMatch() {
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-
-    isMatch ? disableCards() : unflipCards();
 }
 
 function disableCards() {
@@ -56,6 +48,10 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
+        //firstCard.classList.remove('flip');
+        //secondCard.classList.remove('flip');
+
+        //resetBoard();
     }, 1500);
 }
 
@@ -63,12 +59,3 @@ function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
-
-(function shuffle() {
-    cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
-        card.style.order = randomPos;
-    });
-})();
-
-cards.forEach(card => card.addEventListener('click', flipCard));
