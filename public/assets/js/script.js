@@ -25,7 +25,8 @@ function countdown(elementName, minutes, seconds) {
     endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
     updateTimer();
 }
-countdown("timer", 0, 2);
+
+countdown("timer", 0, 60);
 
 
 // PARTIE POUR TOUT LE MEMORY GAME AVEC LE RETOURNEMENT DES CARTES
