@@ -1,10 +1,11 @@
 body {
     background-color: #EF5CBB;
     color: whitesmoke;
-    font-size: 40px;
+    font-size: 50px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-family: 'Helios Antique', sans-serif;
 }
 
 #titre {
@@ -12,10 +13,18 @@ body {
     justify-content: center;
     text-decoration: none;
     color: white;
-    font-size: 50px;
+    font-size: 80px;
+    font-family: 'DottyShadow', sans-serif;
+    margin-top: 2%;
 }
 
-.timer {
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#timer {
     display: flex;
     justify-content: center;
 }
@@ -23,21 +32,6 @@ body {
 .startbtn {
     display: flex;
     justify-content: center;
-}
-
-.cartes {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 200px);
-    place-items: center;
-}
-
-.cartes_row1 {
-    background-color: tomato;
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
 }
 
 h1 {
@@ -48,12 +42,72 @@ h1 {
 h2 {
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: lighter;
 }
 
 #nom {
+    font-size: 25px;
+}
+
+input[type=text] {
+    background: linear-gradient(122.3deg, rgb(249, 248, 250) 14.6%, rgb(232, 129, 166) 29.6%, rgb(237, 237, 183) 42.1%, rgb(244, 166, 215) 56.7%, rgb(154, 219, 232) 68.7%, rgb(238, 226, 159) 84.8%);
+    font-family: 'Koplak', sans-serif;
+    color: rgb(58, 9, 55);
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    font-size: 23px;
+    margin: 5%;
+}
+
+#btn-submit {
+    cursor: pointer;
+    background-color: #EF5CBB;
+    font-family: 'Koplak', sans-serif;
     font-size: 20px;
+    color: whitesmoke;
+    padding: 1%;
+    width: 210px;
+    height: 100px;
+    margin: 5%;
+    border-style: dotted;
+    border-width: 10px;
+    border-color: whitesmoke;
+    cursor: pointer;
+}
+
+#btn-submit:hover {
+    width: 220px;
+    height: 120px;
+}
+
+.home {
+    height: 700px;
+    gap: 10%;
+}
+
+.gauche {
+    width: 50%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.gif {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('https://img.20mn.fr/1NznV_G2QsivQWmvo-37jA/768x492_11-fevrier-2021-soutiens-britney-spears-rassembles-devant-palais-justice-stanley-mosk-los-angeles.jpg');
+    width: 50%;
+    height: 70%;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+    border-radius: 2%;
+    margin-right: 5%;
 }
 
 footer {
@@ -71,28 +125,35 @@ footer {
 
 .quote {
     font-size: 20px;
+    margin-bottom: 5%;
+}
+
+.h2 {
+    font-size: 25px;
+    margin-top: 2%;
 }
 
 .memory-game {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom: 5%;
     /*   perspective: 1000px; */
 }
 
 .memory-card {
-    object-fit: cover;
+    border-radius: 3%;
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
     position: relative;
-    transform: scale(1);
+    /* transform: scale(1); */
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-    background-color: black;
+    background: linear-gradient(to top, #c71d6f 20%, #f2f3f0 100%);
 }
 
 .memory-card:active {
@@ -109,11 +170,23 @@ footer {
     width: 100%;
     height: 100%;
     padding: 0px;
-    position: absolute;
+    position: static;
     backface-visibility: hidden;
     background: #fff;
+    object-fit: cover;
 }
 
 .front-face {
     transform: rotateY(180deg);
+}
+
+#timer {
+    /* text-align: center; */
+    border: 5px solid rgb(255, 220, 249);
+    display: inline;
+    padding: 5px;
+    color: rgb(255, 220, 249);
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
 }

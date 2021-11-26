@@ -49,11 +49,17 @@ class HomeController extends AbstractController
         return $this->twig->render('Home/game.html.twig', ['quote' => $quote, 'pictures' => $tableau2]);
     }
 
-    public function results()
+    public function resultswin()
     {
         session_start();
-        
-         return $this->twig->render('Home/results.html.twig', ['name' => $_SESSION ['loginname']]);
+
+        return $this->twig->render('Home/resultswin.html.twig', ['name' => $_SESSION['loginname']]);
     }
-    
+
+    public function resultsloose()
+    {
+        session_start();
+
+        return $this->twig->render('Home/resultsloose.html.twig', ['name' => $_SESSION['loginname']]);
+    }
 }

@@ -14,7 +14,8 @@ class ApiManager
     }
 
 
-    public function getDataFrom(string $url){
+    public function getDataFrom(string $url)
+    {
 
         $response = $this->client->request('GET', $url);
 
@@ -27,6 +28,4 @@ class ApiManager
 
         return $content = $response->toArray();
     }
-
-
 }

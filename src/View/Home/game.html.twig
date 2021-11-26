@@ -3,21 +3,21 @@
 {% block content %}
 <body>
 
-        <h2>C'est Britney qui l'a dit !</h2>
         <div class="quote">
-        <p>"{{quote}}"</p>
+            <h2>C'est Britney qui l'a dit :</h2>
+            <p>"{{quote}}"</p>
+            <p> Brit </p>
         </div>
 
-		<div class="timer">
-        Le timer
-        <button type="button">Start Timer</button>
+		<div id="timer">
         </div>
 
         <div class="memory-game">
             {% for picture in pictures %}
-                    <div class="memory-card" data-framework="britney{{picture.id}}"><img class="front-face" src="{{picture.img}}"></div>
+                    <div class="memory-card" id="{{picture.id}}" data-framework="britney{{picture.id}}"><img class="front-face" src="{{picture.img}}"></div>
             {% endfor %}
         </div>
+
 
 </body>
 {% endblock %}
