@@ -10,6 +10,7 @@ return [
     '' => ['HomeController', 'index',],
     'play_card' => ['CardController', 'play', ['id']],
     'game' => ['HomeController', 'game'],
-    'results' => ['HomeController', 'results'],
+    'resultswin' => ['HomeController', 'resultswin'],
+    'resultslose' => ['HomeController', 'resultslose'],
     'name' => ['SessionController', 'start']
 ];
