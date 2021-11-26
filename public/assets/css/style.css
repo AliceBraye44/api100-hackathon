@@ -55,16 +55,31 @@ input[type=text] {
   font-family: 'Koplak', sans-serif;
   color: black;
   cursor: pointer;
+  width:200px;
+  height:30px;
+  font-size:23px;
+  margin: 5%;
 }
 
-input[type=submit] {
+#btn-submit {
     cursor: pointer;
-    background-color: rgba(94, 10, 55, 0.7);
+    background-color:  #EF5CBB;
     font-family: 'Koplak', sans-serif;
     font-size: 25px;
     color: whitesmoke;
-    border-radius: 10%;
     padding: 1%;
+    width: 210px;
+    height: 100px;
+    margin:5%;
+    border-style : dotted;
+    border-width: 10px;
+    cursor:pointer;
+}
+
+#btn-submit:hover {
+    width: 220px;
+    height: 120px;
+
 }
 
 .home {
