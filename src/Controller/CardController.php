@@ -67,7 +67,7 @@ class CardController extends AbstractController
 
     public function win()
     {
-        if ($_SESSION['roundsWon'] >= 6 ) {
+        if ($_SESSION['roundsWon'] >= 6) {
             $this->winresults = "free britney ! ";
             $_SESSION['roundsWon'] = 0 ;
             $this->winTheGame = true;
