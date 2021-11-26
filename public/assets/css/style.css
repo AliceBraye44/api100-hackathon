@@ -15,6 +15,7 @@ body {
     color: white;
     font-size: 80px;
     font-family: 'DottyShadow', sans-serif;
+    margin-top: 2%;
 }
 
 .home {
@@ -41,7 +42,7 @@ h1 {
 h2 {
     display: flex;
     justify-content: center;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: lighter;
 }
 
@@ -66,10 +67,32 @@ input[type=submit] {
     padding: 1%;
 }
 
-.gif img {
-    border-radius: 2%;
-    margin: 4%;
+.home {
+    height: 700px;
+    gap: 10%;
+}
+
+.gauche {
     width: 50%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.gif {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('https://img.20mn.fr/1NznV_G2QsivQWmvo-37jA/768x492_11-fevrier-2021-soutiens-britney-spears-rassembles-devant-palais-justice-stanley-mosk-los-angeles.jpg');
+    width: 50%;
+    height: 70%;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+    border-radius: 2%;
+    margin-right: 5%;
 }
 
 footer {
@@ -100,7 +123,6 @@ footer {
 
 .memory-card {
     border-radius: 3%;
-    object-fit: cover;
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -125,9 +147,10 @@ footer {
     width: 100%;
     height: 100%;
     padding: 0px;
-    position: absolute;
+    position: static;
     backface-visibility: hidden;
     background: #fff;
+    object-fit: cover;
 }
 
 .front-face {
