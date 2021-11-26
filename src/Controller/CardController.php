@@ -55,7 +55,6 @@ class CardController extends AbstractController
 
 
     //ajoute les cartes à la liste des cartes retournées
-<<<<<<< HEAD
 
     public function AddFacedCards()
     {
@@ -65,11 +64,6 @@ class CardController extends AbstractController
         } else {
             array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
         }
-=======
-    public function AddFacedCards()
-    {
-        array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
->>>>>>> 084d00a6d7c210e874843d4407afabf1ab5a19b1
     }
 
     public function win()
@@ -112,8 +106,4 @@ class CardController extends AbstractController
             $_SESSION['cards_id'][] = $_GET['id'];
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 084d00a6d7c210e874843d4407afabf1ab5a19b1
