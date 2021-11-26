@@ -104,7 +104,7 @@ footer {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    background: linear-gradient(to top, #c71d6f 20%, #d2df95 100%);
+    background: linear-gradient(to top, #c71d6f 20%, #f2f3f0 100%);
 }
 
 .memory-card:active {
