@@ -18,10 +18,9 @@ body {
     margin-top: 2%;
 }
 
-.home {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.liste {
+    font-family: 'Helios Antique', sans-serif;
+    font-size: 18px;
 }
 
 #timer {
@@ -44,10 +43,21 @@ h2 {
     justify-content: center;
     font-size: 30px;
     font-weight: lighter;
+    margin-bottom: 0;
 }
 
 #nom {
     font-size: 25px;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    font-size: 18px;
+    text-align: left;
 }
 
 input[type=text] {
@@ -84,7 +94,9 @@ input[type=text] {
 
 .home {
     height: 700px;
-    gap: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .gauche {
@@ -93,7 +105,6 @@ input[type=text] {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 10%;
     margin-left: 5%;
 }
 
@@ -126,6 +137,10 @@ footer {
 .quote {
     font-size: 20px;
     margin-bottom: 5%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(167, 22, 167);
 }
 
 .h2 {
@@ -189,4 +204,8 @@ footer {
     font-size: 40px;
     font-weight: bold;
     text-decoration: none;
+}
+
+.textegame {
+    margin: auto;
 }
