@@ -8,7 +8,6 @@ use Symfony\Component\Console\Helper\Dumper;
 class CardController extends AbstractController
 {
 
-
     // //cartes côté face : tableau qui contient des INT id
     public array $facedCards = [];
     public const MAXCARDS = 2;
@@ -40,19 +39,23 @@ class CardController extends AbstractController
             }
 
             var_dump($_SESSION);
+
             $this->endOfRound();
+
+
             var_dump($_SESSION);
             var_dump($message);
             var_dump($this->winresults);
             var_dump($this->facedCards);
 
-            //return json_encode($message);
+            return json_encode($message);
         }
     }
 
 
 
     //ajoute les cartes à la liste des cartes retournées
+<<<<<<< HEAD
 
     public function AddFacedCards()
     {
@@ -62,6 +65,11 @@ class CardController extends AbstractController
         } else {
             array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
         }
+=======
+    public function AddFacedCards()
+    {
+        array_push($this->facedCards, $_SESSION['cards_id'][0], $_SESSION['cards_id'][1]);
+>>>>>>> 084d00a6d7c210e874843d4407afabf1ab5a19b1
     }
 
     public function win()
@@ -104,4 +112,8 @@ class CardController extends AbstractController
             $_SESSION['cards_id'][] = $_GET['id'];
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 084d00a6d7c210e874843d4407afabf1ab5a19b1

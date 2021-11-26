@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Controller;
+
 
 class SessionController
 {
@@ -9,10 +11,14 @@ class SessionController
         session_start();
         $_SESSION['roundsWon'] = 0;
 
-        if (!isset($_SESSION['loginname'])) {
-            $username = "Michel";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            //var_dump($_POST); die();
+
+            $_SESSION['loginname'] = $_POST['loginname'];
         } else {
-            $username = $_SESSION['loginname'];
+            $_SESSION['loginname'] = "Michel";
         }
+        header('Location: /game');
     }
 }
