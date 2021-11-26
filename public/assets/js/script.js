@@ -11,6 +11,7 @@ function countdown(elementName, minutes, seconds) {
         msLeft = endTime - (+new Date);
         if (msLeft < 1000) {
             element.innerHTML = " Oops ! Time is up!";
+                window.location.href="/resultsloose"
         } else {
             time = new Date(msLeft);
             hours = time.getUTCHours();
@@ -24,8 +25,7 @@ function countdown(elementName, minutes, seconds) {
     endTime = (+new Date) + 1000 * (60 * minutes + seconds) + 500;
     updateTimer();
 }
-
-countdown("timer", 0, 30);
+countdown("timer", 0, 2);
 
 
 // PARTIE POUR TOUT LE MEMORY GAME AVEC LE RETOURNEMENT DES CARTES
@@ -86,7 +86,8 @@ function unflipCards() {
     }, 1500);
 }
 
-function resetBoard() {
-    [hasFlippedCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null];
-}
+    function resetBoard() {
+        [hasFlippedCard, lockBoard] = [false, false];
+        [firstCard, secondCard] = [null, null];
+    }
+
