@@ -11,6 +11,6 @@ return [
     'play_card' => ['CardController', 'play', ['id']],
     'game' => ['HomeController', 'game'],
     'resultswin' => ['HomeController', 'resultswin'],
-    'resultslose' => ['HomeController', 'resultslose'],
+    'resultsloose' => ['HomeController', 'resultsloose'],
     'name' => ['SessionController', 'start']
 ];
