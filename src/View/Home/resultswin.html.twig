@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+<h2> You win {{ name }} ! </h2>
+
+<h2>OOPS ! I'm free again !</h2>
+<iframe src="https://giphy.com/embed/d6aIWj2U7uEhLjvCH5" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<div class="btn">
+    <a href="/">
+        <button id="btn-submit" id="end" type="submit" value="replay"> Let's try again !
+        </button>
+    </a>
+</div>
+
+{% endblock %}
+
+{% block audio %}
+     <object>
+<param name="autostart" value="true">
+<param name="src" value="toxic.mp3">
+<param name="autoplay" value="true">
+<param name="controller" value="true">
+<embed src="/assets/toxic.mp3" controller="true" autoplay="true" autostart="True" type="audio/mp3" />
+</object>
+     {% endblock %}

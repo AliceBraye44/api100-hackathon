@@ -1,14 +1,29 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+    </br>
+<div class="home">
 
-    <h2>Bienvenue ! Notre site vous propose de jouer à un jeu de mémoire qui a pour thème Britney Spears (Free Britney!)</h2>
+    <div class="gauche">
 
-    <label for="nom">Ton ptit nom:</label><br>
-    <input type="text" id="nom" name="nom" placeholder="Michel" required>
-    <div class="btn"><a href="home/game"><button id="btn-submit" type="submit" value="Lancer le jeu !"> Lancer le jeu !
-    {# {{button}} #}
+    <h2>Bienvenue !<br> Ce jeu web a pour objectif de :<br></h2>
+    <ul>
+    <li>Mettre en avant notre idole (idylle ?) Britney </li>
+     <li>Prêcher sa musique, indémodable</li>
+     <li>Échanger sur la diversité capillaire</li>
+     <li>Exposer le sens esthétique raffiné des créateurs du jeu</li>
+     <li>Vous divertir</li>
+     <li>Libérer britney</li>   </br></br>
+
+    <form id="formNom" action="/name" method="post" name="loginname">
+        <label for="loginname">Ton ptit nom:</label></br>
+        <input type="text" id="loginname" name="loginname" placeholder="Michel" required>
+        <div class="btn"><a href="/game"><button id="btn-submit" type="submit" value="Lancer le jeu !►"> Let's free Britney!
+    </form>
     </button></a></div>
+    </div>
 
+    <div class="gif"></div>
 
+</div>
 {% endblock %}

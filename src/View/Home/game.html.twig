@@ -2,28 +2,24 @@
 
 {% block content %}
 <body>
-		<div class="timer">
-        Le timer
-        <button type="button">Start Timer</button>
-        </div>
 
-        <div class="quote">
-        <p>"{{quote}}"</p>
-        </div>
 
-		<div class="cartes">
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-            <div class="cartes_row1"></div>
-        </div>
+    <div class="textegame"><h2>Fais marcher ta mémoire, trouve les paires de coupes de cheveux et sauve Britney !</h2>
+
+    <div class="quote">
+    <h2>C'est Britney qui l'a dit :</h2>
+    <p>"{{quote}}"</p>
+    </div></div>
+
+    <div id="timer"></div>
+
+    <div class="memory-game">
+        {% for picture in pictures %}
+                <div id="{{picture.id}}" class="memory-card" data-framework="britney{{picture.id}}"><img class="front-face" src="{{picture.img}}"></div>
+        {% endfor %}
+    </div>
+
+
+
 </body>
 {% endblock %}
