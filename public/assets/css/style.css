@@ -8,7 +8,6 @@ body {
     font-family: 'Koplak', sans-serif;
 }
 
-
 #titre {
     display: flex;
     justify-content: center;
@@ -16,8 +15,14 @@ body {
     color: white;
     font-size: 80px;
     font-family: 'DottyShadow', sans-serif;
+    margin-top: 2%;
 }
 
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 .timer {
     display: flex;
@@ -37,7 +42,7 @@ h1 {
 h2 {
     display: flex;
     justify-content: center;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: lighter;
 }
 
@@ -46,26 +51,48 @@ h2 {
 }
 
 input[type=text] {
-  background: linear-gradient(122.3deg, rgb(111, 71, 133) 14.6%, rgb(232, 129, 166) 29.6%, rgb(237, 237, 183) 42.1%, rgb(244, 166, 215) 56.7%, rgb(154, 219, 232) 68.7%, rgb(238, 226, 159) 84.8%);
-  font-family: 'Koplak', sans-serif;
-  color: #FFFFFF;
-  cursor: pointer;
+    background: linear-gradient(122.3deg, rgb(111, 71, 133) 14.6%, rgb(232, 129, 166) 29.6%, rgb(237, 237, 183) 42.1%, rgb(244, 166, 215) 56.7%, rgb(154, 219, 232) 68.7%, rgb(238, 226, 159) 84.8%);
+    font-family: 'Koplak', sans-serif;
+    color: #FFFFFF;
+    cursor: pointer;
 }
 
 input[type=submit] {
-  cursor: pointer;
-  background-color: rgba(94, 10, 55, 0.7);
-  font-family: 'Koplak', sans-serif;
-  font-size:25px;
-  color: whitesmoke;
-  border-radius:10%;
-  padding:1%;
+    cursor: pointer;
+    background-color: rgba(94, 10, 55, 0.7);
+    font-family: 'Koplak', sans-serif;
+    font-size: 25px;
+    color: whitesmoke;
+    border-radius: 10%;
+    padding: 1%;
 }
 
-.gif img {
-  border-radius: 2%;
-  margin: 4%;
-  width: 50%;
+.home {
+    height: 700px;
+    gap: 10%;
+}
+
+.gauche {
+    width: 50%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.gif {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url('https://img.20mn.fr/1NznV_G2QsivQWmvo-37jA/768x492_11-fevrier-2021-soutiens-britney-spears-rassembles-devant-palais-justice-stanley-mosk-los-angeles.jpg');
+    width: 50%;
+    height: 70%;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+    border-radius: 2%;
+    margin-right: 5%;
 }
 
 footer {
@@ -95,8 +122,7 @@ footer {
 }
 
 .memory-card {
-  border-radius: 3%;
-    object-fit: cover;
+    border-radius: 3%;
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -121,9 +147,10 @@ footer {
     width: 100%;
     height: 100%;
     padding: 0px;
-    position: absolute;
+    position: static;
     backface-visibility: hidden;
     background: #fff;
+    object-fit: cover;
 }
 
 .front-face {
@@ -131,12 +158,12 @@ footer {
 }
 
 #timer {
-  /* text-align: center; */
-  border: 5px solid rgb(255, 220, 249);
-  display:inline;
-  padding: 5px;
-  color: rgb(255, 220, 249);
-  font-size: 40px;
-  font-weight: bold;
-  text-decoration: none;
+    /* text-align: center; */
+    border: 5px solid rgb(255, 220, 249);
+    display: inline;
+    padding: 5px;
+    color: rgb(255, 220, 249);
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
 }
